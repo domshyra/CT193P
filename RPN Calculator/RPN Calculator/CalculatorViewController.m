@@ -78,10 +78,9 @@
 
 - (IBAction)piPressed 
 {
-    NSNumber * piObject = [NSNumber numberWithDouble:M_PI];
-    self.display.text = [piObject stringValue];
+    self.display.text = @"π";
     self.history.text = [self.history.text stringByAppendingFormat:@"%@ ",self.display.text];
-    [self.brain pushOperand:[piObject doubleValue]];
+    [self.brain pushOperand:M_PI];
 }
 
 
