@@ -60,14 +60,18 @@
         if (divisor)
             result = [self popOperand] / divisor;
     }
+    }
     else if ([operation isEqualToString:@"sin"])
     {
-        result = sin([self popOperand]);
+        double divisor = [self popOperand];
+        if (divisor) result = sin(M_PI/180 * divisor);
+        
     }
     else if ([operation isEqualToString:@"cos"])
     {
-        result = cos([self popOperand]);
-    }
+        double divisor = [self popOperand];
+        if (divisor) result = cos(M_PI/180 * divisor);
+    
     else if ([operation isEqualToString:@"sqrt"])
     {
         result = sqrt([self popOperand]);
